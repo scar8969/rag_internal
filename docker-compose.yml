@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  rag-cli:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag-cli
+    volumes:
+      - ./documents:/app/documents
+      - ./data:/app/data
+    env_file:
+      - .env
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - CHROMA_PERSIST_DIR=/app/data/chroma
+    entrypoint: ["python", "main.py"]
+    networks:
+      - rag-network
+
+networks:
+  rag-network:
+    name: rag-network
+    driver: bridge
