@@ -1,0 +1,13 @@
+This is a sample text file for testing the RAG system.
+
+The RAG system can process various document formats including plain text files.
+It chunks the text into smaller segments and stores them as vector embeddings.
+
+When you query the system, it uses semantic search to find the most relevant chunks.
+These chunks are then used as context for the LLM to generate an answer.
+
+Key features:
+- Document ingestion from files and URLs
+- Multiple embedding providers support
+- Semantic search capabilities
+- Grounded responses with citations
